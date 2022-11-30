@@ -1,0 +1,28 @@
+policy:
+  approval:
+    - and:
+      - team review
+      - mlops review
+
+approval_rules:
+  - name: team review
+    requires:
+      count: 1
+      teams:
+        - DigitalInnovation/data-portfolio-team-standard-data-engineers
+    options:
+      invalidate_on_push: true
+
+  - name: mlops review
+    requires: 
+      count: 1
+      teams:
+        - DigitalInnovation/data-portfolio-team-mlops
+    if:
+      targets_branch:
+        pattern: main
+      title:
+        not_matches: 
+          - "GREEN:"
+    options:
+      invalidate_on_push: true
