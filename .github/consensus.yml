@@ -1,0 +1,6 @@
+teams:
+  - slug: geetha-org/engineers
+    consensus: 1
+
+  - slug: geetha-org/mlops
+    consensus: 1
