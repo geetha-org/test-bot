@@ -9,7 +9,7 @@ approval_rules:
     requires:
       count: 1
       teams:
-        - DigitalInnovation/data-portfolio-team-standard-data-engineers
+        - geetha-org/engineers
     options:
       invalidate_on_push: true
 
@@ -17,7 +17,7 @@ approval_rules:
     requires: 
       count: 1
       teams:
-        - DigitalInnovation/data-portfolio-team-mlops
+        - geetha-org/mlops
     if:
       targets_branch:
         pattern: main
