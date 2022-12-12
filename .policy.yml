@@ -2,29 +2,28 @@ policy:
   approval:
     - and:
       - team review
-      # - mlops review
+      - mlops review
 
 approval_rules:
   - name: team review
     requires:
       count: 1
-      organizations: ["geetha-org"]
-  #     teams:
-  #       - geetha-org/engineers
-  #   options:
-  #     invalidate_on_push: true
+      teams:
+        - geetha-org/engineers
+    options:
+      invalidate_on_push: true
 
-  # - name: mlops review
-  #   requires: 
-  #     count: 1
-  #     teams:
-  #       - geetha-org/mlops
-  #   if:
-  #     targets_branch:
-  #       pattern: main
-  #     title:
-  #       not_matches: 
-  #         - "GREEN:"
-  #   options:
-  #     invalidate_on_push: true
+  - name: mlops review
+    requires: 
+      count: 1
+      teams:
+        - geetha-org/mlops
+    if:
+      targets_branch:
+        pattern: main
+      title:
+        not_matches: 
+          - "GREEN:"
+    options:
+      invalidate_on_push: true
 
